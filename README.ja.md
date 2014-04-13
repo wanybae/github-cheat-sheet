@@ -2,6 +2,10 @@
 
 これはGitやGitHubの隠された機能やよく知られていない機能の一覧だ。これはZach Holmanによる[Git and GitHub Secrets](https://github.com/tiimgreen/github-cheat-sheet)というAloha Ruby Conference 2012におけるセッションを元にしている。併せてZachの[スライド](https://github.com/tiimgreen/github-cheat-sheet)も参照した方が良いだろう。
 
+# 目次
+
+- [空白の無視](#%E7%A9%BA%E7%99%BD%E3%81%AE%E7%84%A1%E8%A6%96)
+
 ## 空白の無視
 
 DIFFを表示している時、そのURLに`?w=1`を加えると、空白の変化による差分は表示されなくなり、コード上の変化だけを参照することができる。
@@ -229,7 +233,7 @@ Emojiはプルリクエストやイシュー、READMEなどで`:name_of_emoji:`�
 :shipit:
 :+1:
 
-GitHubでサポートされているEmojiの完全なリストは[Emoji cheat sheet for Campfire and GitHub](http://www.emoji-cheat-sheet.com/)で確認できる。
+GitHubでサポートされているEmojiの完全なリストは[Emoji cheat sheet for Campfire and GitHub](http://www.emoji-cheat-sheet.com/)か[All-Github-Emoji-Icons](https://github.com/scotch-io/All-Github-Emoji-Icons)で確認できる。
 
 GitHubで使われているEmojiのトップ5は以下の通りだ:
 
@@ -257,7 +261,7 @@ GitHubで使われているEmojiのトップ5は以下の通りだ:
 
 ![Quick Quote](http://i.imgur.com/TzpMIOA.png)
 
-## Gitステータスのスタイル
+## Gitステータスのスタイリング
 
 ```bash
 $ git status
@@ -273,7 +277,17 @@ $ git status -sb
 
 ![git status -sb](http://i.imgur.com/xNI1bT0.png)
 
-## Gitクエリー
+## Gitログのスタイリング
+
+```bash
+$ git log --all --graph --decorate --oneline --abbrev-commit
+```
+
+![git log --all --graph --decorate --oneline --abbrev-commit](http://i.imgur.com/RUPycwI.png)
+
+注: これは[後述の手順](#)に従ってエイリアスへ追加することもできる。
+
+## コミットログの検索
 
 指定した文字列を今までのコミット・メッセージから検索して、もっとも新しいものを表示することができる。
 
@@ -282,6 +296,10 @@ $ git show :/query
 ```
 
 `query`を検索したい文字列で置き換えると、最新のコミットがそのコミットにおける差分と同時に表示される。
+
+```bash
+$ git show :/typo
+```
 
 ![git show :/query](http://i.imgur.com/SA0oZbE.png)
 
