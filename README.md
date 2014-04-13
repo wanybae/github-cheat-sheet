@@ -26,6 +26,8 @@ All the hidden and not hidden features of Git and GitHub. This cheat sheet was i
 - [Styled Git Log](https://github.com/tiimgreen/github-cheat-sheet#styled-git-log)
 - [Git Query](https://github.com/tiimgreen/github-cheat-sheet#git-query)
 - [Merged Branches](https://github.com/tiimgreen/github-cheat-sheet#merged-branches)
+- [Quick Licensing](https://github.com/tiimgreen/github-cheat-sheet#quick-licensing)
+- [TODO Lists](https://github.com/tiimgreen/github-cheat-sheet#todo-lists)
 - [.gitconfig Recommendations](https://github.com/tiimgreen/github-cheat-sheet#gitconfig-recommendations)
     - [Aliases](https://github.com/tiimgreen/github-cheat-sheet#aliases)
     - [Auto-correct](https://github.com/tiimgreen/github-cheat-sheet#auto-correct)
@@ -344,6 +346,37 @@ $ git branch --no-merged
 ```
 
 Will give you a list of branches that have not been merged into your current branch.
+
+## Quick Licensing
+
+When creating a repo GitHub gives you the options of adding in a pre-made license:
+
+![Licese](http://i.imgur.com/Chqj4Fg.png)
+
+You can also add them to existing repos by creating a new file through the web interface. When the name `LICENSE` is typed in you will get an option to use a template:
+
+![License](http://i.imgur.com/fTjQict.png)
+
+Also works for `.gitignore`.
+
+## TODO Lists
+
+In Issues and Pull requests check boxes can be added with the following syntax (notice the space):
+```
+- [ ] Be awesome
+- [ ] Do stuff
+- [ ] Sleep
+```
+
+![TODO List](http://i.imgur.com/k2qZi56.png)
+
+When they are clicked, they will be updated in the pure Markdown:
+
+```
+- [x] Be awesome
+- [x] Do stuff
+- [ ] Sleep
+```
 
 ## .gitconfig Recommendations
 
