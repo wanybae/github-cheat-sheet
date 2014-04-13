@@ -92,11 +92,52 @@ $ git commit -m "Fix cock up, fixes #12"
 
 ![Closing Repo](http://i.imgur.com/URXFprQ.png)
 
+## プルリクエストのチェックアウト
+
+プルリクエストをローカル・リポジトリへチェックアウトするには、まず以下のようにコマンドを実行しその変更を取り込む:
+
+```bash
+$ git fetch origin '+refs/pull/*/head:refs/pull/*'
+```
+
+そして、プルリクエストを番号（例: 42）を指定してチェックアウトする:
+
+```bash
+$ git checkout refs/pull/42
+```
+
+別の方法としては、まずリモート・ブランチとして取り込み:
+
+```bash
+$ git fetch origin '+refs/pull/*/head:refs/remotes/origin/pr/*'
+```
+
+それから番号を指定して取り込むこともできる:
+
+```bash
+$ git checkout origin/pr/42
+```
+
+またプルリクエストの取り込みは、.git/configに以下の行を追加すると自動化することができる:
+
+```
+[remote "origin"]
+    fetch = +refs/heads/*:refs/remotes/origin/*
+    url = git@github.com:tiimgreen/github-cheat-sheet.git
+```
+
+```
+[remote "origin"]
+    fetch = +refs/heads/*:refs/remotes/origin/*
+    url = git@github.com:tiimgreen/github-cheat-sheet.git
+    fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+```
+
 ## イシューの相互リンク
 
 同じリポジトリの違うイシューへリンクを張り参照させたい場合、`#`に続けてイシュー番号を指定する。そうすると自動的にリンクが作成されるだろう。
 
-別のリポジトリのイシューの場合は`user_name/repo_name#ISSUE_NUMBER`とすれば良い（例: `tiimgreen/toc#12`）
+別のリポジトリのイシューの場合は`user_name/repo_name#ISSUE_NUMBER`とすれば良い（例: `tiimgreen/toc#12`）。
 
 ## Markdownファイルでの構文強調
 
