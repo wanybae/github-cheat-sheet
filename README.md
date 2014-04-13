@@ -1,6 +1,35 @@
 # GitHub Cheat Sheet
 
-All the hidden and not hidden features of Git and GitHub. This cheat sheet was inspired by Zach Holman's [Git and GitHub Secrets](http://www.confreaks.com/videos/1229-aloharuby2012-git-and-github-secrets) talk at Aloha Ruby Conference 2012. Also see Zach's [slides](https://speakerdeck.com/holman/git-and-github-secrets).
+All the hidden and not hidden features of Git and GitHub. This cheat sheet was inspired by Zach Holman's [Git and GitHub Secrets](http://www.confreaks.com/videos/1229-aloharuby2012-git-and-github-secrets) talk at Aloha Ruby Conference 2012 ([slides](https://speakerdeck.com/holman/git-and-github-secrets)) and his [More Git and GitHub Secrets](https://vimeo.com/72955426) talk at WDCNZ 2013 ([slides](https://speakerdeck.com/holman/more-git-and-github-secrets)).
+
+# Contents
+
+- [Ignore Whitespace](https://github.com/tiimgreen/github-cheat-sheet#ignore-whitespace)
+- [Cloning a Repo](https://github.com/tiimgreen/github-cheat-sheet#cloning-a-repo)
+- [Hub - Git Wrapper](https://github.com/tiimgreen/github-cheat-sheet#hub---git-wrapper)
+- [Previous Branch](https://github.com/tiimgreen/github-cheat-sheet#previous-branch)
+- [git.io](https://github.com/tiimgreen/github-cheat-sheet#gitio)
+- [Gists](https://github.com/tiimgreen/github-cheat-sheet#gists)
+- [Keyboard Shortcuts](https://github.com/tiimgreen/github-cheat-sheet#keyboard-shortcuts)
+- [Closing Issues with Commits](https://github.com/tiimgreen/github-cheat-sheet#closing-issues-with-commits)
+- [Checking out Pull Requests](https://github.com/tiimgreen/github-cheat-sheet#checking-out-pull-requests)
+- [Cross-Link Issues](https://github.com/tiimgreen/github-cheat-sheet#cross-link-issues)
+- [Syntax Highlighting in Markdown Files](https://github.com/tiimgreen/github-cheat-sheet#syntax-highlighting-in-markdown-files)
+- [Commit History by Author](https://github.com/tiimgreen/github-cheat-sheet#commit-history-by-author)
+- [Empty Commits](https://github.com/tiimgreen/github-cheat-sheet#empty-commits)
+- [Comparing Branches](https://github.com/tiimgreen/github-cheat-sheet#comparing-branches)
+- [Line Highlighting in Repos](https://github.com/tiimgreen/github-cheat-sheet#line-highlighting-in-repos)
+- [Emojis](https://github.com/tiimgreen/github-cheat-sheet#emojis)
+- [Images/GIFs](https://github.com/tiimgreen/github-cheat-sheet#imagesgifs)
+- [Quick Quoting](https://github.com/tiimgreen/github-cheat-sheet#quick-quoting)
+- [Styled Git Status](https://github.com/tiimgreen/github-cheat-sheet#styled-git-status)
+- [Styled Git Log](https://github.com/tiimgreen/github-cheat-sheet#styled-git-log)
+- [Git Query](https://github.com/tiimgreen/github-cheat-sheet#git-query)
+- [Merged Branches](https://github.com/tiimgreen/github-cheat-sheet#merged-branches)
+- [.gitconfig Recommendations](https://github.com/tiimgreen/github-cheat-sheet#gitconfig-recommendations)
+    - [Aliases](https://github.com/tiimgreen/github-cheat-sheet#aliases)
+    - [Auto-correct](https://github.com/tiimgreen/github-cheat-sheet#auto-correct)
+    - [Color](https://github.com/tiimgreen/github-cheat-sheet#color)
 
 ## Ignore Whitespace
 
@@ -14,7 +43,7 @@ When cloning a repo the `.git` can be left off the edge.
 $ git clone https://github.com/tiimgreen/github-cheat-sheet
 ```
 
-## Hub - Git wrapper
+## Hub - Git Wrapper
 
 [Hub](https://github.com/github/hub) is a command line tool that wraps git in order to extend it with extra features and commands that make working with GitHub easier.
 
@@ -77,9 +106,9 @@ Pressing `s` will select the search bar.
 
 Pressing `y` __when looking at a file__ (e.g. `https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.md`) will change your URL to one which, in effect, freezes the page you are looking at. If this code changes, you will still be able to see what you saw at that current time.
 
-To see all of the shortcuts for given page type `shift+?`
+To see all of the shortcuts for the current page type `shift+?`
 
-## Closing issues with commits
+## Closing Issues with Commits
 
 If a particular commit fixes an issue, any of the keywords `fix/fixes/fixed` or `close/closes/closed`, followed by the issue number, will close the issue.
 
@@ -99,7 +128,7 @@ If you want to check out pull request locally, you can fetch it using that comma
 $ git fetch origin '+refs/pull/*/head:refs/pull/*'
 ```
 
-then, checkout pr (i.e. 42) using 
+then, checkout Pull Request (i.e. 42) using
 
 ```bash
 $ git checkout refs/pull/42
@@ -111,7 +140,7 @@ Alternatively, you can fetch them as remote branches:
 $ git fetch origin '+refs/pull/*/head:refs/remotes/origin/pr/*'
 ```
 
-and checkout as 
+and checkout as:
 
 ```bash
 $ git checkout origin/pr/42
@@ -133,7 +162,7 @@ and even fetch them automatically, if you add corresponding lines in your .git/c
     fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
 ```
 
-## Cross-link issues
+## Cross-link Issues
 
 If you want to link to another issue in the same repo, simple type hash `#` then the issue number, it will be auto-linked.
 
@@ -215,7 +244,7 @@ https://github.com/rails/rails/blob/master/activemodel/lib/active_model.rb#L53-L
 
 ## Emojis
 
-Emojis can be generated on Pull Requests, Issues, READMEs, etc. using `:name_of_emoji:`
+Emojis can be generated on Pull Requests, Issues, Commit Messages, READMEs, etc. using `:name_of_emoji:`
 
 ```
 :smile:
@@ -229,7 +258,7 @@ Emojis can be generated on Pull Requests, Issues, READMEs, etc. using `:name_of_
 :shipit:
 :+1:
 
-The full list of supported Emojis on GitHub can be found [here](http://www.emoji-cheat-sheet.com/).
+The full list of supported Emojis on GitHub can be found [here](http://www.emoji-cheat-sheet.com/) or [here](https://github.com/scotch-io/All-Github-Emoji-Icons).
 
 The top 5 used Ejmojis on GitHub are:
 
@@ -273,6 +302,16 @@ $ git status -sb
 
 ![git status -sb](http://i.imgur.com/xNI1bT0.png)
 
+## Styled Git Log
+
+```bash
+$ git log --all --graph --decorate --oneline --abbrev-commit
+```
+
+![git log --all --graph --decorate --oneline --abbrev-commit](http://i.imgur.com/RUPycwI.png)
+
+NOTE: This can be added into an Alias (shorter command) using the instructions [here](https://github.com/tiimgreen/github-cheat-sheet#aliases)
+
 ## Git Query
 
 A git query allows you to search all your previous commit messages and finds the most recent one matching the query.
@@ -283,6 +322,9 @@ $ git show :/query
 
 Where `query` is the term you want to search, this then finds the last one and gives details on the lines that were changed.
 
+```bash
+$ git show :/typo
+```
 ![git show :/query](http://i.imgur.com/SA0oZbE.png)
 
 NOTE: Press `q` to quit.
