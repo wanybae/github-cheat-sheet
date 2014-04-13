@@ -25,6 +25,8 @@
 - [Gitログのスタイリング](#git%E3%83%AD%E3%82%B0%E3%81%AE%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AA%E3%83%B3%E3%82%B0)
 - [コミットログの検索](#%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%AD%E3%82%B0%E3%81%AE%E6%A4%9C%E7%B4%A2)
 - [マージ済みブランチ](#%E3%83%9E%E3%83%BC%E3%82%B8%E6%B8%88%E3%81%BF%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81)
+- [設定済みライセンスの追加](#%E8%A8%AD%E5%AE%9A%E6%B8%88%E3%81%BF%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AE%E8%BF%BD%E5%8A%A0)
+- [TODOリスト](#todo%E3%83%AA%E3%82%B9%E3%83%88)
 - [推奨したい.gitconfig](#%E6%8E%A8%E5%A5%A8%E3%81%97%E3%81%9F%E3%81%84gitconfig)
   - [エイリアス](#%E3%82%A8%E3%82%A4%E3%83%AA%E3%82%A2%E3%82%B9)
   - [コマンドの自動修正](#%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%AE%E8%87%AA%E5%8B%95%E4%BF%AE%E6%AD%A3)
@@ -342,6 +344,39 @@ $ git branch --merged
 
 ```bash
 $ git branch --no-merged
+```
+
+## 設定済みライセンスの追加
+
+GitHub上でリポジトリを作成する時、あらかじめ設定されているライセンスを追加することもできる:
+
+![Licese](http://i.imgur.com/Chqj4Fg.png)
+
+既に存在するリポジトリであってもウェブ上のインターフェイスからファイルを作成することで追加できる。`LICENSE`というファイル名にした場合、ライセンスを選択するオプションが表示されるのだ:
+
+![License](http://i.imgur.com/fTjQict.png)
+
+`.gitignore`も同じように作成時に追加することも、後で追加することもできる。
+
+## TODOリスト
+
+In Issues and Pull requests check boxes can be added with the following syntax (notice the space):
+イシューやプルリクエストでは以下のように（空白に注意）書くとチェックボックスを作成することができる:
+
+```
+- [ ] Be awesome
+- [ ] Do stuff
+- [ ] Sleep
+```
+
+![TODO List](http://i.imgur.com/k2qZi56.png)
+
+これらチェックボックスにチェックが入れられると、同時にMarkdownソースも更新される:
+
+```
+- [x] Be awesome
+- [x] Do stuff
+- [ ] Sleep
 ```
 
 ## 推奨したい.gitconfig
