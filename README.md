@@ -1,37 +1,37 @@
 # GitHub Cheat Sheet
 
-All the hidden and not hidden features of Git and GitHub. This cheat sheet was inspired by Zach Holman's [Git and GitHub Secrets](http://www.confreaks.com/videos/1229-aloharuby2012-git-and-github-secrets) talk at Aloha Ruby Conference 2012 ([slides](https://speakerdeck.com/holman/git-and-github-secrets)) and his [More Git and GitHub Secrets](https://vimeo.com/72955426) talk at WDCNZ 2013 ([slides](https://speakerdeck.com/holman/more-git-and-github-secrets)).
+All the hidden and not hidden features of Git and GitHub. This cheat sheet was inspired by [Zach Holman](https://github.com/holman)'s [Git and GitHub Secrets](http://www.confreaks.com/videos/1229-aloharuby2012-git-and-github-secrets) talk at Aloha Ruby Conference 2012 ([slides](https://speakerdeck.com/holman/git-and-github-secrets)) and his [More Git and GitHub Secrets](https://vimeo.com/72955426) talk at WDCNZ 2013 ([slides](https://speakerdeck.com/holman/more-git-and-github-secrets)).
 
 # Contents
 
-- [Ignore Whitespace](https://github.com/tiimgreen/github-cheat-sheet#ignore-whitespace)
-- [Cloning a Repo](https://github.com/tiimgreen/github-cheat-sheet#cloning-a-repo)
-- [Hub - Git Wrapper](https://github.com/tiimgreen/github-cheat-sheet#hub---git-wrapper)
-- [Previous Branch](https://github.com/tiimgreen/github-cheat-sheet#previous-branch)
-- [git.io](https://github.com/tiimgreen/github-cheat-sheet#gitio)
-- [Gists](https://github.com/tiimgreen/github-cheat-sheet#gists)
-- [Keyboard Shortcuts](https://github.com/tiimgreen/github-cheat-sheet#keyboard-shortcuts)
-- [Closing Issues with Commits](https://github.com/tiimgreen/github-cheat-sheet#closing-issues-with-commits)
-- [Checking out Pull Requests](https://github.com/tiimgreen/github-cheat-sheet#checking-out-pull-requests)
-- [Cross-Link Issues](https://github.com/tiimgreen/github-cheat-sheet#cross-link-issues)
-- [Syntax Highlighting in Markdown Files](https://github.com/tiimgreen/github-cheat-sheet#syntax-highlighting-in-markdown-files)
-- [Commit History by Author](https://github.com/tiimgreen/github-cheat-sheet#commit-history-by-author)
-- [Empty Commits](https://github.com/tiimgreen/github-cheat-sheet#empty-commits)
-- [Comparing Branches](https://github.com/tiimgreen/github-cheat-sheet#comparing-branches)
-- [Line Highlighting in Repos](https://github.com/tiimgreen/github-cheat-sheet#line-highlighting-in-repos)
-- [Emojis](https://github.com/tiimgreen/github-cheat-sheet#emojis)
-- [Images/GIFs](https://github.com/tiimgreen/github-cheat-sheet#imagesgifs)
-- [Quick Quoting](https://github.com/tiimgreen/github-cheat-sheet#quick-quoting)
-- [Styled Git Status](https://github.com/tiimgreen/github-cheat-sheet#styled-git-status)
-- [Styled Git Log](https://github.com/tiimgreen/github-cheat-sheet#styled-git-log)
-- [Git Query](https://github.com/tiimgreen/github-cheat-sheet#git-query)
-- [Merged Branches](https://github.com/tiimgreen/github-cheat-sheet#merged-branches)
-- [Quick Licensing](https://github.com/tiimgreen/github-cheat-sheet#quick-licensing)
-- [TODO Lists](https://github.com/tiimgreen/github-cheat-sheet#todo-lists)
-- [.gitconfig Recommendations](https://github.com/tiimgreen/github-cheat-sheet#gitconfig-recommendations)
-    - [Aliases](https://github.com/tiimgreen/github-cheat-sheet#aliases)
-    - [Auto-correct](https://github.com/tiimgreen/github-cheat-sheet#auto-correct)
-    - [Color](https://github.com/tiimgreen/github-cheat-sheet#color)
+- [Ignore Whitespace](#ignore-whitespace)
+- [Cloning a Repo](#cloning-a-repo)
+- [Hub - Git Wrapper](#hub---git-wrapper)
+- [Previous Branch](#previous-branch)
+- [git.io](#gitio)
+- [Gists](#gists)
+- [Keyboard Shortcuts](#keyboard-shortcuts)
+- [Closing Issues with Commits](#closing-issues-with-commits)
+- [Checking out Pull Requests](#checking-out-pull-requests)
+- [Cross-Link Issues](#cross-link-issues)
+- [Syntax Highlighting in Markdown Files](#syntax-highlighting-in-markdown-files)
+- [Commit History by Author](#commit-history-by-author)
+- [Empty Commits](#empty-commits)
+- [Comparing Branches](#comparing-branches)
+- [Line Highlighting in Repos](#line-highlighting-in-repos)
+- [Emojis](#emojis)
+- [Images/GIFs](#imagesgifs)
+- [Quick Quoting](#quick-quoting)
+- [Styled Git Status](#styled-git-status)
+- [Styled Git Log](#styled-git-log)
+- [Git Query](#git-query)
+- [Merged Branches](#merged-branches)
+- [Quick Licensing](#quick-licensing)
+- [TODO Lists](#todo-lists)
+- [.gitconfig Recommendations](#gitconfig-recommendations)
+    - [Aliases](#aliases)
+    - [Auto-correct](#auto-correct)
+    - [Color](#color)
 
 ## Ignore Whitespace
 
@@ -39,7 +39,7 @@ Adding `?w=1` to any diff URL will remove any changes only in whitespace, enabli
 
 ## Cloning a Repo
 
-When cloning a repo the `.git` can be left off the edge.
+When cloning a repo the `.git` can be left off the end.
 
 ```bash
 $ git clone https://github.com/tiimgreen/github-cheat-sheet
@@ -47,7 +47,7 @@ $ git clone https://github.com/tiimgreen/github-cheat-sheet
 
 ## Hub - Git Wrapper
 
-[Hub](https://github.com/github/hub) is a command line tool that wraps git in order to extend it with extra features and commands that make working with GitHub easier.
+[Hub](https://github.com/github/hub) is a command line git wrapper that gives extra features and commands that make working with GitHub easier.
 
 This allows you to do things like:
 
@@ -55,10 +55,10 @@ This allows you to do things like:
 $ hub clone tiimgreen/toc
 ```
 
-Which translates to:
+instead of:
 
 ```bash
-$ git clone git://github.com/tiimgreen/toc.git
+$ git clone https://github.com/tiimgreen/toc.git
 ```
 
 ## Previous Branch
@@ -77,6 +77,9 @@ $ git checkout -
 
 $ git checkout -
 # Switched to branch 'next'
+
+$ git checkout -
+# Switched to branch 'master'
 ```
 
 ## git.io
@@ -108,7 +111,7 @@ Pressing `s` will select the search bar.
 
 Pressing `y` __when looking at a file__ (e.g. `https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.md`) will change your URL to one which, in effect, freezes the page you are looking at. If this code changes, you will still be able to see what you saw at that current time.
 
-To see all of the shortcuts for the current page type `shift+?`
+To see all of the shortcuts for the current page press `?`.
 
 ## Closing Issues with Commits
 
@@ -122,7 +125,7 @@ This closes the issue and references the closing commit.
 
 ![Closing Repo](http://i.imgur.com/URXFprQ.png)
 
-## Checking out pull requests
+## Checking out Pull Requests
 
 If you want to check out pull request locally, you can fetch it using that command:
 
@@ -234,9 +237,9 @@ which allows you to see the difference on the master branch up a set time ago or
 
 ## Line Highlighting in Repos
 
-Adding `#L52` to the end of a code file URL will highlight that line number.
+Either adding `#L52` to the end of a code file URL or simply clicking the lin number will highlight that line number.
 
-It also works with ranges, e.g. `#L53-L60`:
+It also works with ranges, e.g. `#L53-L60`, to select ranges, hold `shift` and click two lines:
 
 ```
 https://github.com/rails/rails/blob/master/activemodel/lib/active_model.rb#L53-L60
@@ -278,7 +281,7 @@ Images and GIFs can be added to comments, READMEs etc.:
 ![Alt Text](http://image_url.com/image.jpg)
 ```
 
-![Jim Carrey](http://wac.450f.edgecastcdn.net/80450F/thefw.com/files/2013/05/Irene.gif)
+![Chuck Norris](http://gifs.joelglovier.com/chuck-norris/chuck-norris.gif)
 
 All images are cached on GitHub, so if your host goes down, the image will remain available.
 
@@ -415,6 +418,7 @@ Some recommendations include:
 | Alias | Current Command | What to Type |
 | --- | --- | --- |
 | `git cm` | `git commit` | `git config --global alias.cm commit` |
+| `git co` | `git checkout` | `git config --global alias.co checkout` |
 | `git ac` | `git add . -A` `git commit` | `git config --global alias.ac '!git add -A && git commit'` |
 | `git st` | `git status -sb` | `git config --global alias.st 'status -sb'` |
 
@@ -451,3 +455,7 @@ To add more colour to your git command line:
 ```bash
 $ git config --global color.ui 1
 ```
+
+# Sharing
+
+Share on [Twitter](https://twitter.com/intent/tweet?source=webclient&text=http%3A%2F%2Fgithub.com%2Ftiimgreen%2Fgithub-cheat-sheet%20-%20GitHub%20Cheat%20Sheet)
