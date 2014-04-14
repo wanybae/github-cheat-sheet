@@ -89,6 +89,6 @@ $ git clone https://gist.github.com/tiimgreen/10545817
 
 `s`는 파일검색란으로 커서를 이동시킨다.
 
-__파일검색중__（예: `https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.md`)에 `y`를 누르면, 지금 참조하고 있는 URL을 고정URL로 변경한다. 만약 코드를 변경했다고 해도, 고정URL을 사용하여 변경전의 코드를 참조할 수 있게된다. 
+__파일검색중__(예: `https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.md`)에 `y`를 누르면, 지금 참조하고 있는 URL을 고정URL로 변경한다. 만약 코드를 변경했다고 해도, 고정URL을 사용하여 변경전의 코드를 참조할 수 있게된다. 
 
 `?`는 현재 페이지에서 사용할 수 있는 모든 단축키를 표시한다.
