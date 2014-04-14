@@ -1,6 +1,6 @@
 # GitHubカンニング・ペーパー
 
-これはGitやGitHubの隠された機能やよく知られていない機能の一覧だ。これは[Zach Holman](https://github.com/holman)による[Git and GitHub Secrets](https://github.com/tiimgreen/github-cheat-sheet)というAloha Ruby Conference 2012におけるセッション（[スライド](https://github.com/tiimgreen/github-cheat-sheet)）と[More Git and GitHub Secrets](https://vimeo.com/72955426)というWDCNZ 2013におけるセッション（[スライド](https://speakerdeck.com/holman/more-git-and-github-secrets)）を元にしている。
+これはGitやGitHubの隠された機能やよく知られていない機能の一覧だ。[Zach Holman](https://github.com/holman)によるAloha Ruby Conference 2012での[Git and GitHub Secrets](https://github.com/tiimgreen/github-cheat-sheet)（[スライド](https://github.com/tiimgreen/github-cheat-sheet)）とWDCNZ 2013での[More Git and GitHub Secrets](https://vimeo.com/72955426)（[スライド](https://speakerdeck.com/holman/more-git-and-github-secrets)）の二つのトークを元にしている。
 
 # 目次
 
@@ -34,7 +34,7 @@
 
 ## 空白の無視
 
-DIFFを表示している時、そのURLに`?w=1`を加えると、空白の変化による差分は表示されなくなり、コード上の変化だけを参照することができる。
+GitHub上で差分ページを表示している時、そのURLに`?w=1`を加えると、空白の変化によるできた差分は表示されなくなり、コード上の変化だけを参照することができる。
 
 ## リポジトリのクローン
 
@@ -89,9 +89,9 @@ $ git checkout -
 
 ## Gists
 
-[Gists](https://gist.github.com/)は少量のコード群を管理する最適な手段だ。いちいちちゃんとしたリポジトリを作成する必要はない。
+[Gists](https://gist.github.com/)は少量のコード群を管理する最適な手段だ。ちゃんとしたリポジトリをいちいち作成する必要はない。
 
-簡単なものとはいえ、完全なGitリポジトリとして機能するため、以下のようにすれば普通のGitリポジトリと同じようにクローンすることができるだろう:
+簡単なものとはいえ、完全なGitリポジトリとして機能するため、以下のようにすれば普通のGitリポジトリと同じようにクローンすることができる:
 
 ```bash
 $ git clone https://gist.github.com/tiimgreen/10545817
@@ -101,7 +101,7 @@ $ git clone https://gist.github.com/tiimgreen/10545817
 
 ## キーボード・ショートカット
 
-リポジトリをブラウザーで開いている時は、ショートカットを利用して様々なページヘ簡単にアクセスできるようになっている。
+リポジトリをブラウザーで開いている時は、ショートカットを利用して様々な機能ヘ簡単にアクセスできるようになっている。
 
 `t`を押すとファイルの検索インターフェイスが起動する。
 
@@ -121,7 +121,7 @@ __ファイルを参照している時__（例: `https://github.com/tiimgreen/gi
 $ git commit -m "Fix cock up, fixes #12"
 ```
 
-こうするとイシュー#12が閉じられ、イシューにはそのコミットへの参照が自動的に追加される。
+こうするとイシュー#12が閉じられ、閉じたイシューにはそのコミットへの参照が自動的に追加される。
 
 ![Closing Repo](http://i.imgur.com/URXFprQ.png)
 
@@ -139,7 +139,7 @@ $ git fetch origin '+refs/pull/*/head:refs/pull/*'
 $ git checkout refs/pull/42
 ```
 
-別の方法としては、まずリモート・ブランチとして取り込み:
+別の方法としては、まずプルリクエストをリモート・ブランチとして取り込み:
 
 ```bash
 $ git fetch origin '+refs/pull/*/head:refs/remotes/origin/pr/*'
@@ -236,7 +236,7 @@ masterブランチと特定の期間または日時との比較が行えるだ�
 
 ## コードの指定行の強調
 
-コードのURLの末尾に`#L52`と付けるか行番号をクリックすると、その行番号が強調表示される。
+コードのURLの末尾に`#L52`と付けるか行番号をクリックすると、その行が強調表示される。
 
 これは範囲指定も可能だ（例: `#L53-L60`）。こういった範囲を選択するには`shift`を押しながら二つの行をクリックしても良い:
 
@@ -286,7 +286,7 @@ GitHubで使われているEmojiのトップ5は以下の通りだ:
 
 ## 素早く引用
 
-イシューのスレッドでコメントを仕様とした時に他の人のコメントを引用したい場合、引用したい文章を選択した状態で`r`を押すと、ブロック引用の記法を使ってテキストエリアにコピーされる。
+イシューのスレッドで他の人のコメントを引用してコメントしたい場合、引用したい文章を選択した状態で`r`を押すと、ブロック引用の記法を使ってテキストエリアにコピーされる。
 
 ![Quick Quote](http://i.imgur.com/TzpMIOA.png)
 
@@ -362,7 +362,6 @@ GitHub上でリポジトリを作成する時、あらかじめ設定されて�
 
 ## TODOリスト
 
-In Issues and Pull requests check boxes can be added with the following syntax (notice the space):
 イシューやプルリクエストでは以下のように（空白に注意）書くとチェックボックスを作成することができる:
 
 ```
@@ -389,22 +388,26 @@ In Issues and Pull requests check boxes can be added with the following syntax (
 
 エイリアスはGitの呼び出し方を自分で好きなように定義できるヘルパー機能だ。例えば`git a`で`git add --all`を実行するようにすることができる。
 
-エイリアスを追加するには`~/.gitconfig`を開く、以下のような形式で記述していく:
+エイリアスを追加するには`~/.gitconfig`を開き、以下のような形式で記述していく:
 
 ```
 [alias]
 	co = checkout
 	cm = commit
 	p = push
+	# Show verbose output about tags, branches or remotes
+	tags = tag -l
+	branches = branch -a
+	remotes = remote -v
 ```
 
-またはコマンドラインからも行えるだろう:
+またはコマンドラインからも設定できる:
 
 ```bash
 $ git config alias.new_alias git_function
 ```
 
-例えば以下のようにする:
+例:
 
 ```bash
 $ git config alias.cm commit
@@ -424,6 +427,9 @@ $ git config alias.ac 'add -A . && commit'
 | `git co` | `git checkout` | `git config --global alias.co checkout` |
 | `git ac` | `git add . -A` `git commit` | `git config --global alias.ac '!git add -A && git commit'` |
 | `git st` | `git status -sb` | `git config --global alias.st 'status -sb'` |
+| `git tags` | `git tag -l` | `git config --global alias.tags 'tag -l'` |
+| `git branches` | `git branch -a` | `git config --global alias.branches 'branch -a'` |
+| `git remotes` | `git remote -v` | `git config --global alias.remotes 'remote -v'` |
 
 ### コマンドの自動修正
 
