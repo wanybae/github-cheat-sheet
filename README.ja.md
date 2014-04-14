@@ -314,7 +314,7 @@ $ git log --all --graph --decorate --oneline --abbrev-commit
 
 ![git log --all --graph --decorate --oneline --abbrev-commit](http://i.imgur.com/RUPycwI.png)
 
-注: これは[後述の手順](#)に従ってエイリアスへ追加することもできる。
+注: これは[後述の手順](#%E3%82%A8%E3%82%A4%E3%83%AA%E3%82%A2%E3%82%B9)に従ってエイリアスへ追加することもできる。
 
 ## コミットログの検索
 
