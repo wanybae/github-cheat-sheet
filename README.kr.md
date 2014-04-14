@@ -102,6 +102,6 @@ __파일검색중__(예: `https://github.com/tiimgreen/github-cheat-sheet/blob/m
 $ git commit -m "Fix cock up, fixes #12"
 ```
 
-이렇게 하면 이슈#12가 닫히고, 닫힌 이슈에는 해당 커밋의 참조가 자동으로 추가된다. 
+이렇게 하면 #12이슈가 닫히고, 닫힌 이슈에는 해당 커밋의 참조가 자동으로 추가된다. 
 
 ![Closing Repo](http://i.imgur.com/URXFprQ.png)
