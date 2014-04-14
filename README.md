@@ -28,6 +28,7 @@ All the hidden and not hidden features of Git and GitHub. This cheat sheet was i
 - [Merged Branches](#merged-branches)
 - [Quick Licensing](#quick-licensing)
 - [TODO Lists](#todo-lists)
+- [Relative Links](#relative-links)
 - [.gitconfig Recommendations](#gitconfig-recommendations)
     - [Aliases](#aliases)
     - [Auto-correct](#auto-correct)
@@ -237,7 +238,7 @@ which allows you to see the difference on the master branch up a set time ago or
 
 ## Line Highlighting in Repos
 
-Either adding `#L52` to the end of a code file URL or simply clicking the lin number will highlight that line number.
+Either adding `#L52` to the end of a code file URL or simply clicking the line number will highlight that line number.
 
 It also works with ranges, e.g. `#L53-L60`, to select ranges, hold `shift` and click two lines:
 
@@ -381,6 +382,19 @@ When they are clicked, they will be updated in the pure Markdown:
 - [ ] Sleep
 ```
 
+## Relative Links
+
+[Relative links](https://help.github.com/articles/relative-links-in-readmes) are recommended in your Markdown files when linking to internal content.
+
+```markdown
+[Link to a header](#awesome-section)
+
+[Link to a file](docs/readme)
+```
+
+Absolute links have to be updated whenever the URL changes (e.g. repo renamed, username changed, project forked).  
+Using relative links makes your documentation easily stand on its own.
+
 ## .gitconfig Recommendations
 
 Your `.gitconfig` is the file that contains all your preferences.
@@ -396,6 +410,10 @@ To add an alias, either navigate to `~/.gitconfig` and fill it out in the follow
 	co = checkout
 	cm = commit
 	p = push
+	# Show verbose output about tags, branches or remotes
+	tags = tag -l
+	branches = branch -a
+	remotes = remote -v
 ```
 
 or type in the command line:
@@ -421,6 +439,9 @@ Some recommendations include:
 | `git co` | `git checkout` | `git config --global alias.co checkout` |
 | `git ac` | `git add . -A` `git commit` | `git config --global alias.ac '!git add -A && git commit'` |
 | `git st` | `git status -sb` | `git config --global alias.st 'status -sb'` |
+| `git tags` | `git tag -l` | `git config --global alias.tags 'tag -l'` |
+| `git branches` | `git branch -a` | `git config --global alias.branches 'branch -a'` |
+| `git remotes` | `git remote -v` | `git config --global alias.remotes 'remote -v'` |
 
 ### Auto-correct
 
