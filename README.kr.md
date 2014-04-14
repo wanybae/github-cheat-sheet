@@ -12,6 +12,7 @@
  - [Gists](#Gists)
  - [키보드 단축키](#키보드-단축키)
  - [커밋으로 이슈닫기](#커밋으로-이슈닫기)
+ - [풀리퀘스트 체크아웃](#풀리퀘스트-체크아웃)
 
 ## 공백을 무시
 
@@ -105,3 +106,44 @@ $ git commit -m "Fix cock up, fixes #12"
 이렇게 하면 #12번 이슈가 닫히고, 닫힌 이슈에는 해당 커밋의 참조가 자동으로 추가된다. 
 
 ![Closing Repo](http://i.imgur.com/URXFprQ.png)
+
+## 풀리퀘스트 체크아웃
+
+풀리퀘스트를 로컬리포지토리에 체크아웃하려면 우선은 다음처럼 커맨드를 실행하고 변경점을 가져온다:
+
+```bash
+$ git fetch origin '+refs/pull/*/head:refs/pull/*'
+```
+
+그리고, 풀리퀘스트를 번호(예:42)를 지정하여 체크아웃한다:
+
+```bash
+$ git checkout refs/pull/42
+```
+
+다른 방법으로는, 우선 풀리퀘스트를 remote branch로 가져올수 있다:
+
+```bash
+$ git fetch origin '+refs/pull/*/head:refs/remotes/origin/pr/*'
+```
+
+거기서 번호를 지정하여 체크아웃할 수 있다:
+
+```bash
+$ git checkout origin/pr/42
+```
+
+또한 풀리퀘스트를 가져올때, .git/config에 다음과 같은 설정을 추가하면 자동화하는 것도 가능하다:
+
+```
+[remote "origin"]
+    fetch = +refs/heads/*:refs/remotes/origin/*
+    url = git@github.com:tiimgreen/github-cheat-sheet.git
+```
+
+```
+[remote "origin"]
+    fetch = +refs/heads/*:refs/remotes/origin/*
+    url = git@github.com:tiimgreen/github-cheat-sheet.git
+    fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+```
