@@ -1,6 +1,6 @@
 # GitHubカンニング・ペーパー
 
-これはGitやGitHubの隠された機能やよく知られていない機能の一覧だ。これはZach Holmanによる[Git and GitHub Secrets](https://github.com/tiimgreen/github-cheat-sheet)というAloha Ruby Conference 2012におけるセッションを元にしている。併せてZachの[スライド](https://github.com/tiimgreen/github-cheat-sheet)も参照した方が良いだろう。
+これはGitやGitHubの隠された機能やよく知られていない機能の一覧だ。これは[Zach Holman](https://github.com/holman)による[Git and GitHub Secrets](https://github.com/tiimgreen/github-cheat-sheet)というAloha Ruby Conference 2012におけるセッション（[スライド](https://github.com/tiimgreen/github-cheat-sheet)）と[More Git and GitHub Secrets](https://vimeo.com/72955426)というWDCNZ 2013におけるセッション（[スライド](https://speakerdeck.com/holman/more-git-and-github-secrets)）を元にしている。
 
 # 目次
 
@@ -31,7 +31,6 @@
   - [エイリアス](#%E3%82%A8%E3%82%A4%E3%83%AA%E3%82%A2%E3%82%B9)
   - [コマンドの自動修正](#%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%AE%E8%87%AA%E5%8B%95%E4%BF%AE%E6%AD%A3)
   - [色設定](#%E8%89%B2%E8%A8%AD%E5%AE%9A)
-- [訳注](#%E8%A8%B3%E6%B3%A8)
 
 ## 空白の無視
 
@@ -55,10 +54,10 @@ $ git clone https://github.com/tiimgreen/github-cheat-sheet
 $ hub clone tiimgreen/toc
 ```
 
-これは実際には以下のようなコマンドに変換される:
+これが以下のコマンドの代わりというわけだ:
 
 ```bash
-$ git clone git://github.com/tiimgreen/toc.git
+$ git clone https://github.com/tiimgreen/toc.git
 ```
 
 ## 直前のブランチ
@@ -77,6 +76,9 @@ $ git checkout -
 
 $ git checkout -
 # Switched to branch 'next'
+
+$ git checkout -
+# Switched to branch 'master'
 ```
 
 ## git.io
@@ -109,7 +111,7 @@ $ git clone https://gist.github.com/tiimgreen/10545817
 
 __ファイルを参照している時__（例: `https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.md`)に`y`を押すと、参照している時の状態で固定されるURLに変更される。つまりそのファイルのコードが後に変化したとしても、そのURLでは今とまったく同じ状態で表示されるということだ。
 
-`Shift+?`を押すとそのページで使える全ショートカットが表示されるだろう。
+`?`を押すとそのページで使える全ショートカットが表示されるだろう。
 
 ## コミットからイシューを閉じる
 
@@ -234,9 +236,9 @@ masterブランチと特定の期間または日時との比較が行えるだ�
 
 ## コードの指定行の強調
 
-コードのURLの末尾に`#L52`と付けると、その行番号が強調表示される。
+コードのURLの末尾に`#L52`と付けるか行番号をクリックすると、その行番号が強調表示される。
 
-これは範囲指定も可能だ（例: `#L53-L60）:
+これは範囲指定も可能だ（例: `#L53-L60）。こういった範囲を選択するには`shift`を押しながら二つの行をクリックしても良い:
 
 ```
 https://github.com/rails/rails/blob/master/activemodel/lib/active_model.rb#L53-L60
@@ -278,7 +280,7 @@ GitHubで使われているEmojiのトップ5は以下の通りだ:
 ![Alt Text](http://image_url.com/image.jpg)
 ```
 
-![Jim Carrey](http://wac.450f.edgecastcdn.net/80450F/thefw.com/files/2013/05/Irene.gif)
+![Chuck Norris](http://gifs.joelglovier.com/chuck-norris/chuck-norris.gif)
 
 あらゆる画像はGitHubでキャッシュされるので、画像のホスティング先が落ちていたとしても変わらず表示されるだろう。
 
@@ -419,6 +421,7 @@ $ git config alias.ac 'add -A . && commit'
 | エイリアス | コマンド | 設定方法 |
 | --- | --- | --- |
 | `git cm` | `git commit` | `git config --global alias.cm commit` |
+| `git co` | `git checkout` | `git config --global alias.co checkout` |
 | `git ac` | `git add . -A` `git commit` | `git config --global alias.ac '!git add -A && git commit'` |
 | `git st` | `git status -sb` | `git config --global alias.st 'status -sb'` |
 
@@ -457,6 +460,10 @@ Gitの出力をカラフルにするには以下のような設定を加える�
 $ git config --global color.ui 1
 ```
 
-## 訳注
+# 共有
+
+是非[Twitter](https://twitter.com/intent/tweet?source=webclient&text=http%3A%2F%2Fgithub.com%2Ftiimgreen%2Fgithub-cheat-sheet%20-%20GitHub%20Cheat%20Sheet)でツイートして欲しい。[日本語訳](https://twitter.com/intent/tweet?source=webclient&text=https%3A%2F%2Fgithub.com%2Fhail2u%2Fgithub-cheat-sheet%2Fblob%2Fmaster%2FREADME.ja.md%20-%20GitHub%E3%82%AB%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0%E3%83%BB%E3%83%9A%E3%83%BC%E3%83%91%E3%83%BC)もよろしく！
+
+# 訳注
 
 これは[GitHub Cheat Sheet](https://github.com/tiimgreen/github-cheat-sheet)の日本語訳である。
