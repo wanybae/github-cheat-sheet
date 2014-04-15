@@ -13,6 +13,13 @@
  - [키보드 단축키](#키보드-단축키)
  - [커밋으로 이슈닫기](#커밋으로-이슈닫기)
  - [풀리퀘스트 체크아웃](#풀리퀘스트-체크아웃)
+ - [이슈의 상호링크](#이슈의-상호링크)
+ - [Markdown파일 구문강화](#markdown파일-구문강화)
+ - [특정 유저에 의한 커밋이력](#특정-유저에-의한-커밋이력)
+ - [브랜치끼리의 비교](#브랜치끼리의-비교)
+ - [이모티콘](#이모티콘)
+ - [이미지 또는 애니메이션GIF](#이미지-또는-애니메이션GIF)
+ - [재빠른 인용](#재빠른-인용)
 
 ## 공백을 무시
 
@@ -147,3 +154,116 @@ $ git checkout origin/pr/42
     url = git@github.com:tiimgreen/github-cheat-sheet.git
     fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
 ```
+
+## 이슈의 상호링크
+
+같은 리포지토리에 다른 이슈끼리 링크를 걸고 싶을 경우에는, `#`에 이슈번호를 지정하면 된다. 이렇게 하면 자동적으로 링크된다.
+
+서로 다른 리포지토리인 경우에는 `user_name/repo_name#ISSUE_NUMBER`와 같이 지정하면 된다.(예: `tiimgreen/toc#12`)
+
+## Markdown파일 구문강화
+
+예를들어 Markdown파일에 Ruby코드를 구문강화를 하고싶다면 다음처럼 하면 된다:
+
+    ```ruby
+    require 'tabbit'
+    table = Tabbit.new('Name', 'Email')
+    table.add_row('Tim Green', 'tiimgreen@gmail.com')
+    puts table.to_s
+    ```
+
+이렇게 하면 다음처럼 표시되게 된다:
+
+```ruby
+require 'tabbit'
+table = Tabbit.new('Name', 'Email')
+table.add_row('Tim Green', 'tiimgreen@gmail.com')
+puts table.to_s
+```
+
+GitHub에서는 [Linguist](https://github.com/github/linguist)를 사용하여 언어를 판별하고 구문강화를 표시한다. 구문강화가 서포트하고 있는 언어리스트는 [언어정의YAML파일](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)을 참고하면 된다.
+
+## 특정 유저에 의한 커밋이력
+
+특정 유저에 의한 특정 리포지토리에 커밋한 이력만을 참조하고싶을 경우에는, `?author=username`을 URL에 붙히면 볼 수 있다.
+
+```
+https://github.com/rails/rails/commits/master?author=dhh
+```
+
+## 빈 커밋
+
+`--allow-empty`옵션을 붙히면, 코드에 변화가 없더라도 커밋할 수 있다. 
+
+```bash
+$ git commit -m "Big-ass commit" --allow-empty
+```
+
+![Trololol](http://img1.wikia.nocookie.net/__cb20130905205853/flylikeabird3/images/0/0c/Mexican_troll_face_by_mariodude12312-d5mtl9z.png)
+
+## 브랜치끼리의 비교
+
+GitHub에서 브랜치비교는 다음 URL을 사용하면 된다:
+
+```
+https://github.com/user/repo/compare/{range}
+```
+
+`{range}`를 `master...4-1-stable`와 같이 사용한다:
+
+```
+https://github.com/rails/rails/compare/master...4-1-stable
+```
+
+`{range}`는 다음처럼 날짜를 지정하여 사용할 수도 있다:
+
+```
+https://github.com/rails/rails/compare/master@{1.day.ago}...master
+https://github.com/rails/rails/compare/master@{2014-10-04}...master
+```
+master 브랜치와 지정한 기간 혹은 일시의 비교를 할 수 있다.
+
+## 이모티콘
+
+이모티콘은 풀리퀘스트나 이슈, README에 `:name_of_emoji:`를 이용하여 사용할 수 있다:
+
+```
+:smile:
+:poop:
+:shipit:
+:+1:
+```
+
+:smile:
+:poop:
+:shipit:
+:+1:
+
+GitHub에서 서포트하고 있는 이모티콘의 리스트는 [Emoji cheat sheet for Campfire and GitHub](http://www.emoji-cheat-sheet.com/)나 [All-Github-Emoji-Icons](https://github.com/scotch-io/All-Github-Emoji-Icons)에서 확인할 수 있다.
+
+GitHub에서 사용되어지고 있는 이모티콘 탑5는 다음과 같다:
+
+1. :shipit: `:shipit:`
+2. :sparkles: `:sparkles:`
+3. :-1: `:-1:`
+4. :+1: `:+1:`
+5. :clap: `:clap:`
+
+## 이미지 또는 애니메이션GIF
+
+이미지나 애니메이션GIF는 커밋의 커맨트나 README에서 사용된다:
+
+```
+![Alt Text](http://image_url.com/image.jpg)
+```
+
+![Chuck Norris](http://gifs.joelglovier.com/chuck-norris/chuck-norris.gif)
+
+모든 이미지는 GitHub에 케쉬되기 때문에, 이미지의 호스트에 문제가 있어도 문제없이 표시될꺼다.
+
+## 재빠른 인용
+
+이슈의 쓰래드에 다른 사람의 커맨트를 인용하여 커맨트를 작성하려고 할때, 인용하려는 문장을 선택한 상태에서 `r`을 누르면, 선택한 문장이 블럭인용기법으로 텍스트박스안에 복사된다.
+
+![Quick Quote](http://i.imgur.com/TzpMIOA.png)
+
