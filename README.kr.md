@@ -300,7 +300,7 @@ $ git log --all --graph --decorate --oneline --abbrev-commit
 
 ![git log --all --graph --decorate --oneline --abbrev-commit](http://i.imgur.com/RUPycwI.png)
 
-주: 이건 [다음](#alias) 문법을 이용하여 Alias(단축커맨드)로 추가할 수 있다.
+주: 이건 [다음](#aliases) 문법을 이용하여 Alias(단축커맨드)로 추가할 수 있다.
 
 ## 커밋로그 검색
 
