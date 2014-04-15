@@ -25,6 +25,10 @@
  - [커밋로그 검색](#커밋로그-검색)
  - [머지된 브랜치](#머지된-브랜치)
  - [신속한 라이센스 설정](#신속한-라이센스-설정)
+ - [TODO리스트](#todo리스트)
+ - [관련링크](#관련링크)
+ - [추천하는 .gitconfig](#추천하는-.gitconfig)
+   - [Aliases](#aliases)
 
 ## 공백을 무시
 
@@ -341,3 +345,84 @@ GitHub상에서 리포지토리를 생성하는 경우, 이미 설정해둔 라�
 ![License](http://i.imgur.com/fTjQict.png)
 
 `.gitignore`도 동일하게 작성할때 추가하는것도, 나중에 추가하는것도 가능하다.
+
+## TODO리스트
+
+이슈나 풀리퀘스트에서 다음처럼(공백에 주의) 작성하면 체크박스를 만들 수 있다:
+
+```
+- [ ] Be awesome
+- [ ] Do stuff
+- [ ] Sleep
+```
+
+![TODO List](http://i.imgur.com/k2qZi56.png)
+
+이 체크박스가 체크되는 동시에 Markdown소스도 갱신된다:
+
+```
+- [x] Be awesome
+- [x] Do stuff
+- [ ] Sleep
+```
+
+## 관련링크
+[관련링크](https://help.github.com/articles/relative-links-in-readmes)는 Markdown문서내에서의 인터널 링크를 할경우 많이 사용된다.
+
+```markdown
+[Link to a header](#awesome-section)
+
+[Link to a file](docs/readme)
+```
+절대링크는 URL이 변경(예:리포지토리 이름변경, 유저명변경, 프로젝트forked)되면 같이 변경을 시켜줘야한다. 상대링크를 사용하면 문서관리가 유용해진다.
+
+## 추천하는 .gitconfig
+
+`.gitconfig`는 모든 설정을 포함하고 있는 파일이다.
+
+### Aliases
+
+Alias는 Git을 실행하기 편이하게 스스로 설정가능한 도우미기능이다. 예를들어 `git a`로 `git add --all`를 실행할수 있도록 설정을 할 수 있다.
+
+Alias를 추가하려면 `~/.gitconfig`을 열어서 다음과 같이 기입을 하면된다:
+
+```
+[alias]
+	co = checkout
+	cm = commit
+	p = push
+	# Show verbose output about tags, branches or remotes
+	tags = tag -l
+	branches = branch -a
+	remotes = remote -v
+```
+
+또는 커맨드라인에서 다음처럼 설정할 수도 있다:
+
+```bash
+$ git config alias.new_alias git_function
+```
+
+예:
+
+```bash
+$ git config alias.cm commit
+```
+
+주: Alias가 다수의 커맨드를 지정하게 되는 경우라면 quote를 사용한다:
+
+```bash
+$ git config alias.ac 'add -A . && commit'
+```
+
+몇몇 추천하는 Alias:
+
+| Alias | Command | 설정방법 |
+| --- | --- | --- |
+| `git cm` | `git commit` | `git config --global alias.cm commit` |
+| `git co` | `git checkout` | `git config --global alias.co checkout` |
+| `git ac` | `git add . -A` `git commit` | `git config --global alias.ac '!git add -A && git commit'` |
+| `git st` | `git status -sb` | `git config --global alias.st 'status -sb'` |
+| `git tags` | `git tag -l` | `git config --global alias.tags 'tag -l'` |
+| `git branches` | `git branch -a` | `git config --global alias.branches 'branch -a'` |
+| `git remotes` | `git remote -v` | `git config --global alias.remotes 'remote -v'` |
