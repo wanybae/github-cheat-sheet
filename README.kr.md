@@ -20,6 +20,8 @@
  - [이모티콘](#이모티콘)
  - [이미지 또는 애니메이션GIF](#이미지-또는-애니메이션GIF)
  - [재빠른 인용](#재빠른-인용)
+ - [Git 스테이터스의 스타일링](#Git-스테이터스의-스타일링)
+ - [Git 로그의 스타일링](#Git-로그의-스타일링)
 
 ## 공백을 무시
 
@@ -267,3 +269,46 @@ GitHub에서 사용되어지고 있는 이모티콘 탑5는 다음과 같다:
 
 ![Quick Quote](http://i.imgur.com/TzpMIOA.png)
 
+## Git 스테이터스의 스타일링
+
+```bash
+$ git status
+```
+
+![git status](http://i.imgur.com/o3PEHAA.png)
+
+이렇게 표시하는것도 가능하다:
+
+```bash
+$ git status -sb
+```
+
+![git status -sb](http://i.imgur.com/xNI1bT0.png)
+
+## Git 로그의 스타일링
+
+```bash
+$ git log --all --graph --decorate --oneline --abbrev-commit
+```
+
+![git log --all --graph --decorate --oneline --abbrev-commit](http://i.imgur.com/RUPycwI.png)
+
+주: 이건 [다음](#alias) 문법을 이용하여 Alias(단축커맨드)로 추가할 수 있다.
+
+## 커밋로그 검색
+
+git검색은 지금까지의 커밋메시지에서서의 검색을 지원하며, 그중 가장 최신의 결과를 표시해준다.
+
+```bash
+$ git show :/query
+```
+
+`query`에는 검색하고싶은 조건을 입력하여, 최신 결과를 찾아주고 사분까지 자세하게 표시해준다.
+
+```bash
+$ git show :/typo
+```
+
+![git show :/query](http://i.imgur.com/SA0oZbE.png)
+
+주: 종료하려면 `q`를 누른다.
