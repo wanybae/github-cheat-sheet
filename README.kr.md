@@ -26,7 +26,7 @@
  - [머지된 브랜치](#머지된-브랜치)
  - [신속한 라이센스 설정](#신속한-라이센스-설정)
  - [TODO리스트](#todo리스트)
- - [관련링크](#관련링크)
+ - [상대링크](#상대링크)
  - [추천하는 .gitconfig](#추천하는-gitconfig)
    - [Aliases](#aliases)
    - [커맨드의 자동수정](#커맨드의-자동수정)
@@ -368,8 +368,8 @@ GitHub상에서 리포지토리를 생성하는 경우, 이미 설정해둔 라�
 - [ ] Sleep
 ```
 
-## 관련링크
-[관련링크](https://help.github.com/articles/relative-links-in-readmes)는 Markdown문서내에서의 인터널 링크를 할경우 많이 사용된다.
+## 상대링크
+[상대링크](https://help.github.com/articles/relative-links-in-readmes)는 Markdown문서내에서의 인터널 링크를 할경우 많이 사용된다.
 
 ```markdown
 [Link to a header](#awesome-section)
