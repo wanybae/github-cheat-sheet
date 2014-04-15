@@ -29,6 +29,8 @@
  - [관련링크](#관련링크)
  - [추천하는 .gitconfig](#추천하는-gitconfig)
    - [Aliases](#aliases)
+   - [커맨드의 자동수정](#커맨드의-자동수정)
+   - [색설정](#색설정)
 
 ## 공백을 무시
 
@@ -426,3 +428,46 @@ $ git config alias.ac 'add -A . && commit'
 | `git tags` | `git tag -l` | `git config --global alias.tags 'tag -l'` |
 | `git branches` | `git branch -a` | `git config --global alias.branches 'branch -a'` |
 | `git remotes` | `git remote -v` | `git config --global alias.remotes 'remote -v'` |
+
+### 커맨드의 자동수정
+
+만약 `git comit`이라고 잘못된 커맨드를 입력했을 경우, 다음과 같은 출력을 보게 될 것이다:
+
+```bash
+$ git comit -m "Message"
+# git: 'comit' is not a git command. See 'git --help'.
+
+# Did you mean this?
+# 	commit
+```
+
+`comit`이라고 잘못 입력했을지라도 `commit`을 실행시키고 싶을 경우, 자동수정 설정을 유효화 해두면 된다:
+
+```bash
+$ git config --global help.autocorrect 1
+```
+
+이 설정으로 다음과 같은 출력을 볼 수 있다:
+
+```bash
+$ git comit -m "Message"
+# WARNING: You called a Git command named 'comit', which does not exist.
+# Continuing under the assumption that you meant 'commit'
+# in 0.1 seconds automatically...
+```
+
+### 색설정
+
+Git의 출력을 컬러풀하게 하려면 다음처럼 설정을 하면 된다:
+
+```bash
+$ git config --global color.ui 1
+```
+
+# 공유
+
+[Twitter](https://twitter.com/intent/tweet?source=webclient&text=http%3A%2F%2Fgithub.com%2Ftiimgreen%2Fgithub-cheat-sheet%20-%20GitHub%20Cheat%20Sheet)로 트윗해주세요. [한국어번역](https://twitter.com/intent/tweet?source=webclient&text=http%3A%2F%2Fgithub.com%2Fwanybae%2Fgithub-cheat-sheet%20-%20GitHub%20Cheat%20Sheet)도 잘 부탁드립니다.
+
+# 역주
+
+이 글은 [GitHub Cheat Sheet](https://github.com/tiimgreen/github-cheat-sheet)의 한국어 번역본입니다.
