@@ -471,3 +471,4 @@ $ git config --global color.ui 1
 # 역주
 
 이 글은 [GitHub Cheat Sheet](https://github.com/tiimgreen/github-cheat-sheet)의 한국어 번역본입니다.
+최신버전에 대한 번역은 추후 시간을 내서 진행할 예정입니다.(2014/04/15)
