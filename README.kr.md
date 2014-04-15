@@ -27,7 +27,7 @@
  - [신속한 라이센스 설정](#신속한-라이센스-설정)
  - [TODO리스트](#todo리스트)
  - [관련링크](#관련링크)
- - [추천하는 .gitconfig](#추천하는-.gitconfig)
+ - [추천하는 .gitconfig](#추천하는-gitconfig)
    - [Aliases](#aliases)
 
 ## 공백을 무시
